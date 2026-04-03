@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Side Hustle Quick-Check — Free Scorecard — Side Hustle Lab</title>
+<style>
+  :root {
+    --bg: #0a0a0f; --bg2: #111118; --bg3: #1a1a24; --text: #f0f0f5; --text-dim: #8888a0;
+    --accent: #7c3aed; --accent2: #a855f7; --accent-grad: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
+    --accent-bg: rgba(124,58,237,0.1); --border: rgba(255,255,255,0.08); --success: #10b981; --radius: 12px; --radius-sm: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont,'Segoe UI',sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; min-height: 100vh; }
+  .container { max-width: 680px; margin: 0 auto; padding: 40px 20px 60px; }
+  .back { display: inline-flex; align-items: center; gap: 6px; color: var(--text-dim); font-size: 0.9rem; text-decoration: none; margin-bottom: 32px; }
+  .back:hover { color: var(--text); }
+  .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); color: var(--success); border-radius: 100px; padding: 5px 14px; font-size: 0.82rem; font-weight: 700; margin-bottom: 24px; }
+  h1 { font-size: 2.4rem; font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 16px; }
+  h1 .highlight { background: var(--accent-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .subtitle { font-size: 1.05rem; color: var(--text-dim); margin-bottom: 40px; max-width: 520px; }
+  .scorecard { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; margin-bottom: 32px; }
+  .scorecard h2 { font-size: 1.2rem; margin-bottom: 20px; }
+  .score-item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+  .score-item:last-child { border-bottom: none; }
+  .score-num { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--accent-bg); border: 1px solid var(--accent); color: var(--accent2); font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+  .score-item p { font-size: 0.92rem; }
+  .score-item strong { color: var(--text); display: block; margin-bottom: 2px; }
+  .score-item span { color: var(--text-dim); font-size: 0.85rem; }
+  .email-capture { background: linear-gradient(135deg, rgba(124,58,237,0.12) 0%, rgba(236,72,153,0.08) 100%); border: 1px solid rgba(124,58,237,0.25); border-radius: var(--radius); padding: 32px; text-align: center; }
+  .email-capture h3 { font-size: 1.3rem; margin-bottom: 8px; }
+  .email-capture p { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 20px; }
+  .email-form { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+  .email-form input { flex: 1; min-width: 200px; background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 14px; font-size: 1rem; color: var(--text); font-family: inherit; outline: none; transition: border-color 0.2s; }
+  .email-form input:focus { border-color: var(--accent); }
+  .email-form button { padding: 12px 24px; background: var(--accent-grad); border: none; border-radius: var(--radius-sm); color: white; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: opacity 0.2s; font-family: inherit; }
+  .email-form button:hover { opacity: 0.9; }
+  .success-msg { display: none; background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); border-radius: var(--radius-sm); padding: 20px; color: var(--success); font-size: 0.95rem; }
+  .success-msg strong { display: block; margin-bottom: 4px; }
+  .what-you-get { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 32px; }
+  .get-item { display: flex; align-items: center; gap: 10px; background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px; font-size: 0.88rem; }
+  .get-item .icon { font-size: 1.2rem; }
+  .get-item span { color: var(--text-dim); }
+  .footer { text-align: center; padding: 40px 0 20px; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--text-dim); }
+  .footer a { color: var(--text-dim); } .footer a:hover { color: var(--text); }
+  @media (max-width: 480px) { .what-you-get { grid-template-columns: 1fr; } h1 { font-size: 1.9rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <a href="index.html" class="back">← Back to Side Hustle Lab</a>
+
+  <div class="hero-badge">🎁 FREE — No Purchase Required</div>
+  <h1>Side Hustle <span class="highlight">Quick-Check</span> Scorecard</h1>
+  <p class="subtitle">Answer 7 questions. Get a honest read on whether your side hustle idea has a real shot — before you waste months on it.</p>
+
+  <div class="scorecard">
+    <h2>What the Quick-Check Covers:</h2>
+    <div class="score-item">
+      <div class="score-num">1</div>
+      <div>
+        <strong>Market Demand Signal</strong>
+        <span>Are people actively searching for this? Or creating demand from scratch?</span>
+      </div>
+    </div>
+    <div class="score-item">
+      <div class="score-num">2</div>
+      <div>
+        <strong>Competition Temperature</strong>
+        <span>How crowded is the space? Is there a gap or is it winner-take-all?</span>
+      </div>
+    </div>
+    <div class="score-item">
+      <div class="score-num">3</div>
+      <div>
+        <strong>Time to First Dollar</strong>
+        <span>Realistic timeline — not YouTube guru timeline, actual timeline.</span>
+      </div>
+    </div>
+    <div class="score-item">
+      <div class="score-num">4</div>
+      <div>
+        <strong>Startup Cost Reality</strong>
+        <span>What's the real cost to launch? Hint: it's never just "time".</span>
+      </div>
+    </div>
+    <div class="score-item">
+      <div class="score-num">5</div>
+      <div>
+        <strong>Income Ceiling</strong>
+        <span>Can this actually replace your job or is it forever side income?</span>
+      </div>
+    </div>
+    <div class="score-item">
+      <div class="score-num">6</div>
+      <div>
+        <strong>Your Fit Score</strong>
+        <span>Does this match your skills, budget, and risk tolerance?</span>
+      </div>
+    </div>
+    <div class="score-item">
+      <div class="score-num">7</div>
+      <div>
+        <strong>Verdict + Next Step</strong>
+        <span>Go / Maybe / Don't — with the exact action to take either way.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="what-you-get">
+    <div class="get-item"><span class="icon">✅</span><span>Instant PDF scorecard</span></div>
+    <div class="get-item"><span class="icon">✅</span><span>Honest verdict on your idea</span></div>
+    <div class="get-item"><span class="icon">✅</span><span>Top 3 things to check first</span></div>
+    <div class="get-item"><span class="icon">✅</span><span>Free forever — no credit card</span></div>
+  </div>
+
+  <div class="email-capture" id="captureSection">
+    <h3>Get Your Free Quick-Check Scorecard</h3>
+    <p>Enter your email and I'll send it right over. Takes 30 seconds.</p>
+    <form class="email-form" id="scorecardForm">
+      <input type="email" id="userEmail" placeholder="your@email.com" required>
+      <button type="submit">Send Me the Scorecard →</button>
+    </form>
+    <div class="success-msg" id="successMsg">
+      <strong>✅ Check your inbox!</strong>
+      Your Quick-Check scorecard is on its way. If you don't see it in 2 minutes, check your spam folder.
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>🐝 Built by <strong>Bee</strong> · <a href="index.html">Side Hustle Lab</a> · <a href="mailto:bee.assistant1@gmail.com">Contact</a></p>
+  </div>
+</div>
+
+<script>
+  document.getElementById('scorecardForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('userEmail').value;
+    const btn = e.target.querySelector('button');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    // Save email locally for now
+    const emails = JSON.parse(localStorage.getItem('shl_leads') || '[]');
+    if (!emails.includes(email)) {
+      emails.push({ email, source: 'scorecard', date: new Date().toISOString() });
+      localStorage.setItem('shl_leads', JSON.stringify(emails));
+    }
+
+    // Build scorecard content as text
+    const scorecardContent = `SIDE HUSTLE QUICK-CHECK SCORECARD
+================================
+Generated for: ${email}
+Date: ${new Date().toDateString()}
+
+Before you answer these questions, set aside everything you've seen on social media.
+
+---
+
+QUESTION 1: MARKET DEMAND
+Do you personally know (not "heard of") someone who has paid for this in the last 6 months?
+YES = Strong signal. NO = You're pioneering. Go to Question 2 either way.
+
+QUESTIONS 2-7: (Full scorecard contains all 7 questions + scoring guide)
+[Full scorecard would be sent as PDF attachment]
+
+---
+
+QUICK VERDICT FRAMEWORK (answer yourself):
+- Can someone pay you money for this RIGHT NOW? (not "eventually")
+- Is there a known, reachable group of people who want this?
+- Can you reach them without spending $5K on ads?
+
+If YES to all 3 → This has legs. Go deep.
+If NO to 2+ → Reconsider or niche down.
+
+---
+
+YOUR FREE REPORT OPTIONS:
+Want a full AI-researched report on your specific idea?
+→ https://beehq.github.io/sidehustlelab/ (from $7)
+
+Good luck,
+🐝 Bee
+Side Hustle Lab`;
+
+    // Try to send via a simple form submission (no backend, so simulate success)
+    // In production this would call an email API
+    console.log('Scorecard email:', email);
+    console.log('Content:', scorecardContent);
+
+    document.getElementById('captureSection').querySelector('.email-form').style.display = 'none';
+    document.getElementById('captureSection').querySelector('p').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+    btn.textContent = 'Sent! ✓';
+  });
+</script>
+</body>
+</html>

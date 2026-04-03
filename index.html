@@ -27,6 +27,7 @@
     .logo { font-size: 1.2rem; font-weight: 700; background: var(--accent-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -0.5px; }
     header nav { display: flex; gap: 20px; }
     header nav a { color: var(--text-dim); font-size: 0.9rem; }
+    header nav a.free-link { color: var(--success); font-weight: 600; }
     header nav a:hover { color: var(--text); text-decoration: none; }
     /* Mobile nav */
     .mobile-menu-btn { display: none; background: none; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 6px 10px; color: var(--text-dim); cursor: pointer; font-size: 1.2rem; }
@@ -177,6 +178,7 @@
   <div class="container">
     <div class="logo">Side Hustle Lab</div>
     <nav class="desktop-nav">
+      <a href="free-scorecard.html" style="color: var(--success); font-weight: 600;">Free Scorecard 🎁</a>
       <a href="#free">Free Reports</a>
       <a href="#paid">Paid Reports</a>
       <a href="#custom">Custom Report</a>
@@ -184,6 +186,7 @@
     </nav>
     <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">☰</button>
     <nav class="mobile-nav" id="mobileNav">
+      <a href="free-scorecard.html" onclick="closeMobileNav()" style="color: var(--success);">Free Scorecard 🎁</a>
       <a href="#free" onclick="closeMobileNav()">Free Reports</a>
       <a href="#paid" onclick="closeMobileNav()">Paid Reports</a>
       <a href="#custom" onclick="closeMobileNav()">Custom Report</a>
@@ -210,6 +213,16 @@
     <div class="trust-item"><span class="icon">📧</span> Email delivery in 10 minutes</div>
     <div class="trust-item"><span class="icon">✅</span> Real data, not hallucinated</div>
   </div>
+
+  <!-- Free lead magnet: Side Hustle Quick-Check -->
+  <section style="margin-bottom: 40px;">
+    <div style="background: linear-gradient(135deg, rgba(16,185,129,0.08) 0%, rgba(124,58,237,0.05) 100%); border: 1px solid rgba(16,185,129,0.2); border-radius: var(--radius); padding: 28px 32px; text-align: center;">
+      <div style="font-size: 0.78rem; font-weight: 700; color: var(--success); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">🎁 FREE</div>
+      <h3 style="font-size: 1.3rem; margin-bottom: 8px;">Get the Side Hustle Quick-Check Scorecard</h3>
+      <p style="color: var(--text-dim); font-size: 0.88rem; margin-bottom: 16px; max-width: 480px; margin-left: auto; margin-right: auto;">7 questions that tell you if your side hustle idea has a real shot — before you waste months on it. Free forever.</p>
+      <a href="free-scorecard.html" style="display: inline-flex; align-items: center; gap: 6px; padding: 10px 24px; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4); color: var(--success); border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='rgba(16,185,129,0.25)'" onmouseout="this.style.background='rgba(16,185,129,0.15)'">Get the Free Scorecard →</a>
+    </div>
+  </section>
 
   <section class="not-sure" id="not-sure">
     <h2>🤔 Not sure where to start?</h2>
